@@ -1,0 +1,20 @@
+01#Glwssikh Didaskalia#A,3#B,2#C,2
+02#Neoellhnikh Logotexnia#A,2#B,2#C,2
+03#Arxaia#A,2#B,2#C,2
+04#Arxaia Keimena#A,2#B,2#C,2
+05#Mathimatika#A,4#B,4#C,4
+06#Fusikh#A,1#B,2#C,2
+07#Xhmeia#A,0#B,1#C,1
+08#Biologia#A,1#B,1#C,1
+09#Gewgrafia#A,1#B,2#C,0
+10#Oikonomia#A,2#B,0#C,0
+11#Istoria#A,2#B,2#C,2
+12#Politikh Agwgh#A,0#B,0#C,2
+13#Thrhskeytika#A,2#B,2#C,2
+14#Agglika#A,2#B,2#C,2
+15#Gallika#A,2#B,2#C,2
+16#Fusikh Agwgh#A,2#B,2#C,2
+17#Texnologia#A,1#B,1#C,1
+18#Plhroforikh#A,1#B,1#C,1
+19#Mousikh#A,1#B,1#C,1
+20#Kallitexnika#A,1#B,1#C,1

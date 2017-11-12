@@ -1,0 +1,17 @@
+100#Eleutheriadis Giwrgos#05,06#4,20
+101#Fragkoulhs Dimitris#01,02#4,20
+102#Zampatha Giwrgia#16#2,10
+103#Verou Maria#14,15#3,15
+104#Drosos Xrhstos#17,18#3,12
+105#Kampisioulis Giannis#07,08#3,9
+106#Lamprianakou Gianna#03,04#4,19
+107#Flwrou Katerina#19,20#4,20
+108#Kontoe Maria#11,13#4,20
+109#Vergos Vasilis#10,12#4,20
+110#Mpizonis Kwstas#05,06#4,20
+111#Xristou Xaralampos#16#4,20
+112#Memmou Dimitra#01,02,03,04,11#4,20
+113#Karkoulis Stathis#06,07,08#4,20
+114#Zampatha Xristina#16#4,20
+115#Mpisioulis Thodoris#10,19,20#4,20
+116#Aggelopoulos Sotiris#01,10,11,12#4,20

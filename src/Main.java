@@ -14,6 +14,9 @@ public class Main {
             population = genetics.evolve(population);
             data.getFitnessPerGeneration().put(generations, population.getFittest().getFitness());
             data.getConflictsPerGeneration().put(generations, population.getFittest().getNumberOfConflicts());
+            if(population.getFittest().getNumberOfConflicts() == 0){
+                break;
+            }
         }
         System.out.println("Solution found with " + population.getFittest().getNumberOfConflicts() + " conflicts");
         ProcessOutput.generateScheduleOutput(population.getFittest(), data);

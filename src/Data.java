@@ -23,7 +23,7 @@ public class Data {
     public Data() {
         this.rooms = Parser.parseRooms();
         this.teachers = Parser.parseTeachers();
-        this.lessons = Parser.parseLessons(teachers);
+        this.lessons = Parser.parseLessons(teachers, rooms);
         fitnessPerGeneration = new HashMap<>();
         conflictsPerGeneration = new HashMap<>();
     }

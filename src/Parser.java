@@ -2,9 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.DayOfWeek;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * This class parses the data from the files
@@ -20,24 +18,27 @@ public class Parser {
      * this method parses the rooms
      */
     public static List<Room> parseRooms() {
-        List<Room> rooms = new ArrayList<Room>();
+        Set<Room> rooms = new HashSet<>();
         String line;
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(LESSONS_PATH));
             while ((line = bufferedReader.readLine()) != null) {
                 String[] lineParams = line.split("#");
                 for(int i = 2;i<lineParams.length;i++) {
-                    String roomName = lineParams[i].split(",")[0];
-                    Room room = new Room(roomName);
-                    if(!rooms.contains(room)){
-                        rooms.add(room);
-                    }
+                    String roomGrade = lineParams[i].split(",")[0];
+                        for (int j = 1; j <= Room.INSTANCES; j++) {
+                            Room room = new Room(roomGrade);
+                            room.setName(room.getGrade() + j);
+                            rooms.add(room);
+                        }
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return rooms;
+        List<Room> roomList = new ArrayList<>(rooms);
+        Collections.sort(roomList);
+        return roomList;
     }
 
     /**
@@ -73,9 +74,9 @@ public class Parser {
     }
 
     /**
-     * this method parses the lessons and populates the teachers
+     * this method parses the lessons and populates the teachers and the available hours per room
      */
-    public static List<Lesson> parseLessons(List<Teacher> teachers) {
+    public static List<Lesson> parseLessons(List<Teacher> teachers, List<Room> rooms) {
         List<Lesson> lessons = new ArrayList<Lesson>();
         Lesson lesson;
         String line;
@@ -87,12 +88,16 @@ public class Parser {
                 lesson.setId(Integer.valueOf(lineParams[0]));
                 lesson.setName(lineParams[1]);
                 for(int i = 2;i<lineParams.length;i++){
-                    String roomName = lineParams[i].split(",")[0];
+                    String roomGrade = lineParams[i].split(",")[0];
                     int hours = Integer.valueOf(lineParams[i].split(",")[1]);
                     if(lesson.getAvailableHoursPerRoom() == null){
                         lesson.setAvailableHoursPerRoom(new HashMap<Room, Integer>());
                     }
-                    lesson.getAvailableHoursPerRoom().put(new Room(roomName),hours);
+                    for(Room room : rooms){
+                        if(roomGrade.equals(room.getGrade())) {
+                            lesson.getAvailableHoursPerRoom().put(room, hours);
+                        }
+                    }
                 }
                 lesson.setTeachers(getTeachersForLesson(teachers, lesson.getId()));
                 lessons.add(lesson);

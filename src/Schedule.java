@@ -212,7 +212,7 @@ public class Schedule implements Comparable {
     }
 
     /**
-     * this method builds the schedule
+     * this method builds the schedule with random data
      */
     private void initializeSchedule() {
         classes = new LinkedList<>();

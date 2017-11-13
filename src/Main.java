@@ -1,9 +1,9 @@
 public class Main {
 
     //the population size
-    public static final int POPULATION_SIZE = 30;
+    public static final int POPULATION_SIZE = 25;
     //the number of the generations
-    private static final int GENERATIONS = 100000;
+    private static final int GENERATIONS = 100;
 
     public static void main(String[] args) {
         Data data = new Data();
